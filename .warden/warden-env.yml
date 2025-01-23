@@ -1,0 +1,10 @@
+services:
+  db:
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-prestashop}
+      - MYSQL_DATABASE=${MYSQL_DATABASE:-prestashop}
+      - MYSQL_USER=${MYSQL_USER:-prestashop}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD:-prestashop}
+  nginx:
+    volumes:
+      - ./.warden/nginx/prestashop.conf:/etc/nginx/default.d/custom.conf
